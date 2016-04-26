@@ -1,0 +1,118 @@
+#!/bin/bash
+echo "Creating SAVE"
+mkdir SAVE
+dir=SAVE
+chmod u+rwx SAVE
+chmod pg-rwx SAVE
+
+Files = `ls -l`
+echo "Content of current directory with permissions"
+for f in $Files
+do
+  echo  $f
+done
+#or 
+#cat Files
+
+for i in {1..10}
+do
+  if [$i=10]
+  then
+      spam$i > spam$i
+      "No next file" >> spam$i
+  else
+      spam$i > spam$i
+      "Next file is spam$(($i+1)) >> spam$i
+  fi
+done
+
+echo "Regular files in current directory"
+Files=`(find /nfs/u50/ravip2 -maxdepth 1 -type f)`
+for f in $Files
+do
+  if [$f -f]
+  then
+      echo $(basename $f)
+  fi
+done
+
+echo "Regular files in SAVE"
+Files=`(find /nfs/u50/ravip2/SAVE -type f)`
+for f in $Files
+do
+if [$f -f]
+  then
+      echo $(basename $f)
+  fi
+done
+
+Files=`ls`
+for f in $Files
+do
+  numbers=`grep '2\|3\|5' $f` 
+  if [-n numbers]
+  then
+       mv $f SAVE
+  fi
+done
+
+echo "Regular files in SAVE"
+Files=`(find /nfs/u50/ravip2/SAVE -type f)`
+for f in $Files
+do
+if [$f -f]
+  then
+      echo $(basename $f)
+  fi
+done
+
+echo "Regular files in current directory"
+Files=`(find /nfs/u50/ravip2 -maxdepth 1 -type f)`
+for f in $Files
+do
+  if [$f -f]
+  then
+      echo $(basename $f)
+  fi
+done
+
+Files=`ls`
+for f in $Files
+do
+  lines | grep 7 >> BIGFILE
+done
+
+echo "The content of BIGFILE"
+cat BIGFILE
+
+Files = 'ls -l'
+echo "Regular files in current directory with permissions"
+for f in $Files
+do
+  if [$f -f]
+  then
+      echo $(basename $f)
+  fi
+done
+
+chmod ugo+r BIGFILE
+chmod ug+x BIGFILE
+chmod u+w BIGFILE
+
+echo "Regular files in current directory"
+Files=`(find /nfs/u50/ravip2 -maxdepth 1 -type f)`
+for f in $Files
+do
+  if [$f -f]
+  then
+      echo $(basename $f)
+  fi
+done
+
+rm -rf SAVE
+rm BIGFILE
+rm spam10
+rm spam6
+rm spam7
+rm spam8
+rm spam9

@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ $# -ne 4 ]
+then 
+echo "Invalid arguments"
+exit
+fi
+grep "$3\|$4" $1>$2
+
+echo "done">>$2

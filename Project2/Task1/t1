@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+#ifdef _AB
+  void progAB();
+#endif
+#ifdef _BC
+  void progBC();
+#endif
+#ifdef _CD
+  void progCD();
+#endif
+
+int main() {
+#ifdef _d1
+  printf("Blue Jays give me blues.\n");
+  return 0;
+#endif
+#ifdef _d2
+  printf("I am blue because of Blue Jays.\n");
+  return 0;
+#endif

@@ -1,0 +1,18 @@
+#ifdef _AB
+  progAB();
+  return 0;
+#endif
+
+#ifdef _BC
+  progBC();
+  return 0;
+#endif
+
+#ifdef _CD
+  progCD();
+  return 0;
+#endif
+
+  printf("NO specifications\n");
+  return 0;
+}

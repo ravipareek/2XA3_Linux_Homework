@@ -1,0 +1,17 @@
+if [ ! -f f2.py ]
+then 
+	echo "# module f2.py" > f2.py
+	echo "def day():" >> f2.py
+    echo "      x=\" Wed Oct 7 00:22:52 EDT 2015 \"" >> f2.py
+    echo  "      x=x[1:4]" >> f2.py
+    echo  "      print x" >> f2.py
+fi
+
+if [ ! -f f1.py ]
+then
+	exit
+fi
+
+python f1.py
+rm f2.py
+rm f2.pyc

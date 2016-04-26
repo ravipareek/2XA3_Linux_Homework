@@ -1,0 +1,8 @@
+format: format.cpp
+	g++ -o format format.cpp
+document: writer1/doc.txt writer2/doc.txt writer3/doc.txt writer4/doc.txt format
+	./format writer1/doc.txt > document
+	./format writer2/doc.txt >> document
+	./format writer3/doc.txt >> document
+	./format writer4/doc.txt >> document
+	rm format
