@@ -1,2 +1,2 @@
-# 2XA3_Linux_Homework
-Software Engineering 2XA3 Course Work at McMaster University. Assignment details provided as PDF files
+# Linux_Homework
+Learning Linux shell scripting. Details of the assignments are provided in the pdf
